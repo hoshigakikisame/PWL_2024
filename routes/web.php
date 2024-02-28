@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PhotoController;
 
 /*
@@ -15,15 +17,11 @@ use App\Http\Controllers\PhotoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/hello', [WelcomeController::class, 'hello']);
+Route::get('/about', [AboutController::class, 'about']);
 
-Route::get('/about', [WelcomeController::class, 'about']);
-
-Route::get('/articles/{id}', [WelcomeController::class, 'articles']);
+Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
 // basic route
 Route::get('/world', function () {
@@ -56,7 +54,7 @@ Route::get('/user/profile', function () {
 })->name('profile');
 
 
-Route::resource('photos', PhotoController::class);
+// Route::resource('photos', PhotoController::class);
 
 Route::resource('photos', PhotoController::class)->only([
     'index', 'show'

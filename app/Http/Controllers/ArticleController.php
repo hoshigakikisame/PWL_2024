@@ -4,12 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class ArticleController extends Controller
 {
-    public function hello() {
-        return 'Welcome';
-    }
-
     public function articles($id) {
         return "Halaman Artikel dengan ID {$id}";
     }
