@@ -10,7 +10,11 @@ class WelcomeController extends Controller
         return 'Welcome';
     }
 
-    public function articles($id) {
-        return "Halaman Artikel dengan ID {$id}";
+    public function greeting() {
+        return view('blog.hello')
+        ->with('name', 'Ferdi Riansyah Ramadhani Kusuma')
+        ->with('occupation', 'Mahasiswa');
     }
+
+
 }
