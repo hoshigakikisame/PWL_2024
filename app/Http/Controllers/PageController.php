@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index() {
-        return 'Hello World';
+        return 'Selamat Datang';
     }
 
     public function articles($id) {
@@ -17,6 +17,6 @@ class PageController extends Controller
     public function about() {
         $nama = "Ferdi Riansyah Ramadhani Kusuma";
         $nim  = "2241720264";
-        return "Nama saya adalah $nama dan NIM saya adalah $nim";
+        return "Nama : " . $nama . "<br>" . "NIM : " . $nim;
     }
 }
